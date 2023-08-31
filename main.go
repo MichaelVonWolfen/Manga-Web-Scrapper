@@ -13,10 +13,6 @@ func main() {
 
 	helpers.InsertWebsitesAndQueries(db)
 
-	tx := db.Begin()
-
-	var website modules.Website
-	tx.Find(&website, 2)
 	//manga := modules.Manga{
 	//	Model:   gorm.Model{},
 	//	Name:    "Test2",
@@ -45,7 +41,6 @@ func main() {
 	//}
 	fmt.Println("Hello World")
 	// Commit the transaction if everything is successful
-	tx.Commit()
 
 	c := colly.NewCollector()
 	c.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
